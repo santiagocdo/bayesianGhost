@@ -2,13 +2,53 @@ let timeline = [];
 
 let instructions0 = {
   type: "html-keyboard-response",
-  stimulus: "<p> Hello and thank you for taking part in our experiment!</p>" +
-    "<p>It should take about 30 minutes.</p>" +
-    "<p> <i> Press spacebar to continue</i> </p>",
+  stimulus: '<p style="font-size:26px;"> Hello and thank you for taking part in our experiment! </p>' +
+    '<p style="font-size:24px;"> The experiment consist on a Human Detection Task followed by some questionnaires, and it takes around 30 minutes to complete. </p>' +
+    '<p style="font-size:22px;"> <i> Press the spacebar to continue. </i> </p>',
   choices: [32],
-  on_finish: function (data) {
-    data.index = 'lol';
-  }
+};
+
+
+let instructions1 = {
+  type: "html-keyboard-response",
+  stimulus: '<p style="font-size:26px;"> Please ensure the following: </p>' +
+    '<p style="font-size:22px;"> (1) That you are in a room with no distractions (no people, music, phones, etc.), </p>' +
+    '<p style="font-size:22px;"> (2) That for the next 30 minutes, you will be able to stay focused on the task and questionnaires, </p>' +
+    '<p style="font-size:22px;"> As the study progresses, you may find that you start to feel tired. Please do your best to stay focused throughout, since our research depends on it! </p>' +
+    '<p style="font-size:24px;"> <i> Press the spacebar to continue. </i> </p>',
+  choices: [32],
+};
+
+let instructions2 = {
+  type: "html-keyboard-response",
+  stimulus: '<p style="font-size:26px;"> Human Detection Task </p>' +
+    '<p style="font-size:22px;"> In this task, you will see a series of displays containing one or two people. </p>' +
+    '<p style="font-size:22px;"> In half of the displays there will be two people in each side of the screen, but one person will be masked with a cloud of white dots. </p>' +
+    '<p style="font-size:22px;"> For the other half of the displays there will be only one person on one side, and in the other side there will be only a cloud of white dots. </p>' +
+    '<p style="font-size:22px;"> Your job is to detect if there is a person within the cloud of white dots for each. </p>' +
+    '<p style="font-size:22px;"> For each display, please report as accurately as possible whether you saw two people or not. </p>' +
+    '<p style="font-size:22px;"> Press "y" for saying "Yes, I saw a second person". </p>' +
+    '<p style="font-size:22px;"> Press "n" to say "No, I did no see a second person". </p>' +
+    '<p style="font-size:24px;"> <i> Press the spacebar to continue. </i> </p>',
+  choices: [32],
+};
+
+let instructions3 = {
+  type: "html-keyboard-response",
+  stimulus: '<p style="font-size:22px;"> After pressing detecting with "y" or "n" the second person, you will be asked how confident you were with your choice. </p>' + 
+    '<p style="font-size:22px;"> Use the keyboard to respond your confidence level by pressing the buttons, 1, 2, 3, 4, or 5. Where 1 is no confident at all and 5 is very confident. </p>' + 
+    '<p style="font-size:22px;"> The first part of the Human Detection Task is a practice block. Here you will see 4 displays and feedback will be provided (you will see a "correct" or an "incorrect" word on the screen). </p>' + 
+    '<p style="font-size:22px;"> The second part of the task is the testing block. You will see 72 displays, and no feedback will be provided. </p>' + 
+    '<p style="font-size:24px;"> <i> Press the spacebar to continue. </i> </p>',
+  choices: [32],
+};
+
+let instructions4 = {
+  type: "html-keyboard-response",
+  stimulus: '<p style="font-size:22px;"> Finally, after this screen you will start the task. </p>' +
+    '<p style="font-size:22px;"> If you are ready to invest the next 15 minutes completing the study and responding the questionnaires then: </p>' +
+    '<p style="font-size:24px;"> <i> Press the spacebar to start. </i> </p>',
+  choices: [32],
 };
 
 let fixation = {
@@ -29,13 +69,13 @@ let trial = {
 
 let detection = {
   type: "html-keyboard-response",
-  stimulus: '<div style="font-size:60px; color:white;">Is there anyone in there?</div>',
+  stimulus: '<div style="font-size:24px; color:white;">Did you saw the second person?</div>' + 
+    '<p style="font-size:24px;"> <i> Press "y" for Yes AND "n" for No. </i> </p>',
   data: jsPsych.timelineVariable("data"),
   choices: [78, 89],
   on_finish: function (data) {
     data.index = trialIterator;
     data.workerId = workerId;
-    trialIterator ++;
     let response = data.key_press;
     switch (response) {
       case 78: 
@@ -50,7 +90,8 @@ let detection = {
 
 let confidence = {
   type: "html-keyboard-response",
-  stimulus: '<div style="font-size:60px; color:white;">How confident are you? (from 1 to 5)</div>',
+  stimulus: '<div style="font-size:24px; color:white;">How confident are you? (from 1 to 5)</div>'+ 
+  '<p style="font-size:24px;"> <i> 1 = No confident at all AND 5 = Very confident. </i> </p>',
   data: jsPsych.timelineVariable("data"),
   choices: [49, 50, 51, 52, 53],
   on_finish: function (data) {
