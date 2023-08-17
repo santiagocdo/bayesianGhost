@@ -1,7 +1,8 @@
 trialIterator = 1;
 
 // # # # # (1) create a random sample sized all videos within stim/ # # # # 
-let randTrials = jsPsych.randomization.repeat(stimArray, 1); //shuffled array no repeats
+let randTrialsAll = jsPsych.randomization.repeat(stimArray, 1); //shuffled array no repeats
+const randTrials = randTrialsAll.slice(0, numberTrials);
 
 // # # # # (2) define trial videos location # # # # 
 // trials

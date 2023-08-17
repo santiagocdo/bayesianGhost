@@ -154,11 +154,9 @@ $fileArrayJSON = json_encode($fileArray);
       sexAtBirth = "<?php echo $sexAtBirth ?>";
       siteNumber = "<?php echo $institutionAlias ?>";
       ageAtAssessment = "<?php echo $ageInMonths ?>";
-      //feedbackLink = "https://belieflab.yale.edu/omnibus/eCRFs/feedback/tasks/kamin.php?candidateId=<?php echo $candidateId ?>&studyId=<?php echo $studyId ?>";
       visit = "<?php echo $visit ?>";
       week = "<?php echo $week ?>";
       feedbackLink = "https://yalesurvey.ca1.qualtrics.com/jfe/form/SV_5BB0Y7nlPJ3Nw1g?interview_age=<?php echo $ageInMonths ?>&src_subject_id=<?php echo $consortId ?>&study_id=<?php echo $labId ?>&subjectkey=<?php echo $subjectKey ?>&site=<?php echo $institutionAlias ?>&sex=<?php echo $sexAtBirth ?>&phenotype=<?php echo $groupStatus ?>&candidateId=<?php echo $candidateId ?>&visit=<?php echo $visit ?>";
-
     }
   </script>
 </footer>

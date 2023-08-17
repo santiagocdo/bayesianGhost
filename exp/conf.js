@@ -5,4 +5,4 @@
   let workerId = getParamFromURL('workerId');
 
   // number of trials
-  const numberTrials = 72;
+  const numberTrials = 2;// 72;
