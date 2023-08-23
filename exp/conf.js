@@ -7,5 +7,5 @@
   const feedbackDuration = 1000;
 
   // number of trials
-  const numberTrials = 2;// 72;
-  const numberPracticeTrials = 6;
+  const numberTrialsTest = 2;// 72;
+  const numberTrialsPractice = 2;

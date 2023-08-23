@@ -1,17 +1,26 @@
 <?php
 require_once 'db/data.php';
 require_once 'db/config.php';
-$directoryPath = 'stim/';
-$files = scandir($directoryPath);
-$fileArray = [];
+$directoryPathTest = 'stim/test/';
+$directoryPathPractice = 'stim/practice/';
+$filesTest = scandir($directoryPathTest);
+$filesPractice = scandir($directoryPathPractice);
+$fileArrayTest = [];
+$fileArrayPractice = [];
 
-foreach ($files as $file) {
+foreach ($filesTest as $file) {
     if ($file !== '.' && $file !== '..') {
-        $fileArray[] = $file;
+        $fileArrayTest[] = $file;
     }
 }
+foreach ($filesPractice as $file) {
+  if ($file !== '.' && $file !== '..') {
+      $fileArrayPractice[] = $file;
+  }
+}
 
-$fileArrayJSON = json_encode($fileArray);
+$fileArrayTestJSON = json_encode($fileArrayTest);
+$fileArrayPracticeJSON = json_encode($fileArrayPractice);
 ?>
 
 <!DOCTYPE html>
@@ -29,7 +38,8 @@ $fileArrayJSON = json_encode($fileArray);
   <!-- set js language variable from php variable in config.php -->
   <script>
     const language = "<?php echo $language; ?>";
-    const stimArray = <?php echo $fileArrayJSON; ?>;
+    const stimArrayTest = <?php echo $fileArrayTestJSON; ?>;
+    const stimArrayPractice = <?php echo $fileArrayPracticeJSON; ?>;
 
   </script>
   <script type="text/javascript" src="db/validate.js"></script>

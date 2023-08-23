@@ -119,10 +119,25 @@ let confidence = {
   }
 };
 
+let procedurePractice = {
+  timeline: [fixation, trial],
+  timeline_variables: trialsPractice,
+  choices: [70, 74],
+};
+
+let instructions5 = {
+  type: "html-keyboard-response",
+  stimulus: '<p style="font-size:26px;"> The practice trials are now over, and the next trials are real. </p>' +
+    '<p style="font-size:22px;"> In the next set of testing trials you will not have feedback. </p>' +
+    '<p style="font-size:22px;"> Please do your best to pay attention throughout the experiment, since your data will be useful to us only if you stay focused and continue to respond as accurately as possible all the way until the end. </p>' +
+    '<p style="font-size:24px;"> <i> Press the spacebar to begin. </i> </p>',
+  choices: [32],
+};
+
 let procedureTest = {
   timeline: [fixation, trial, detection, confidence],
-  timeline_variables: testTrials,
-  choices: [48, 49],
+  timeline_variables: trialsTest,
+  choices: [70, 74],
 };
 
 let dataSave = {
