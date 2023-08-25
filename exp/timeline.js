@@ -27,15 +27,15 @@ let instructions2 = {
     '<p style="font-size:22px;"> For the other half of the videos there will be only one person on one side, and in the other side there will be only a cloud of white dots. </p>' +
     '<p style="font-size:22px;"> Your job is to detect if there is a person within the cloud of white dots. </p>' +
     '<p style="font-size:22px;"> For each display, please report as accurately as possible whether you saw two people or not. </p>' +
-    '<p style="font-size:22px;"> Press "y" for saying "Yes, I saw a second person". </p>' +
-    '<p style="font-size:22px;"> Press "n" to say "No, I did not see a second person". </p>' +
+    '<p style="font-size:22px;"> Press "J" for saying "Yes, I saw a second person". </p>' +
+    '<p style="font-size:22px;"> Press "F" to say "No, I did not see a second person". </p>' +
     '<p style="font-size:24px;"> <i> Press the spacebar to continue. </i> </p>',
   choices: [32],
 };
 
 let instructions3 = {
   type: "html-keyboard-response",
-  stimulus: '<p style="font-size:22px;"> After detecting ("y") or not detecting ("n") the second person, you will be asked how confident you were with your choice. </p>' + 
+  stimulus: '<p style="font-size:22px;"> After detecting ("J") or not detecting ("F") the second person, you will be asked how confident you were with your choice. </p>' + 
     '<p style="font-size:22px;"> Press to buttons 1, 2, 3, 4, or 5 to rate your confidence level, where 1 is not confident at all and 5 is very confident. </p>' + 
     '<p style="font-size:22px;"> The first part of the Human Detection Task is a practice block. Here you will see 4 displays and feedback will be provided (you will see a "correct" or an "incorrect" word on the screen). </p>' + 
     '<p style="font-size:22px;"> The second part of the task is the testing block. You will see 72 displays, and no feedback will be provided. </p>' + 
@@ -70,9 +70,9 @@ let trial = {
 let detection = {
   type: "html-keyboard-response",
   stimulus: '<div style="font-size:24px; color:white;">Did you see a person in the cloud?</div>' + 
-    '<p style="font-size:24px;"> <i> Press "y" for Yes AND "n" for No. </i> </p>',
+    '<p style="font-size:24px;"> <i> Press "J" for Yes AND "F" for No. </i> </p>',
   data: jsPsych.timelineVariable("data"),
-  choices: [78, 89],
+  choices: [70, 74],
   on_finish: function (data) {
     data.index = trialIterator;
     data.workerId = workerId;
@@ -174,9 +174,9 @@ let end = {
     "<p style='color:white;'>You have successfully completed the experiment and your data has been saved.</p>" +
     "<p style='color:white;'>To proceed to the next section of this experiment, please click the following link:</p>" +
     // "<p style='color:white;'>To leave feedback on this task, please click the following link:</p>"+
-    // "<p style='color:white;'><a href="+ feedbackLink +">Leave Task Feedback!</a></p>" +
+    "<p style='color:white;'><a href="+ feedbackLink +">Go to questionnaires!</a></p>",
     // "<p style='color:white;'>Please wait for the experimenter to continue.</p>"+
-    "<p style='color:white;'><i>You may now close the expriment window at anytime.</i></p>",
+    //"<p style='color:white;'><i>You may now close the expriment window at anytime.</i></p>",
   choices: jsPsych.NO_KEYS,
   // on_load: function() {
   //   alert(reward);

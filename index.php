@@ -117,7 +117,7 @@ $fileArrayPracticeJSON = json_encode($fileArrayPractice);
       sexAtBirth = "";
       siteNumber = "";
       ageAtAssessment = "";
-      feedbackLink = "";
+      feedbackLink = "https://yalesurvey.ca1.qualtrics.com/jfe/form/SV_0chMnwD9uK8Aaiy?workerId=<?php echo $workerId?>";
       visit = "";
       week = "";
     } else {
@@ -127,7 +127,7 @@ $fileArrayPracticeJSON = json_encode($fileArrayPractice);
         sexAtBirth = "";
         siteNumber = "";
         ageAtAssessment = "";
-        feedbackLink = "";
+        feedbackLink = "https://yalesurvey.ca1.qualtrics.com/jfe/form/SV_0chMnwD9uK8Aaiy?interview_age=<?php echo $ageInMonths ?>&src_subject_id=<?php echo $consortId ?>&study_id=<?php echo $labId ?>&subjectkey=<?php echo $subjectKey ?>&site=<?php echo $institutionAlias ?>&sex=<?php echo $sexAtBirth ?>&phenotype=<?php echo $groupStatus ?>&candidateId=<?php echo $candidateId ?>&visit=<?php echo $visit ?>";
         visit = "";
         week = "";
       } else if (db_connection == true) {
@@ -139,10 +139,9 @@ $fileArrayPracticeJSON = json_encode($fileArrayPractice);
         siteNumber = "<?php echo $institutionAlias ?>";
         ageAtAssessment = "<?php echo $ageInMonths ?>";
         groupStatus = "<?php echo $groupStatus ?>";
-        //feedbackLink = "https://belieflab.yale.edu/omnibus/eCRFs/feedback/tasks/prl.php?candidateId=<?php echo $candidateId ?>&studyId=<?php echo $studyId ?>";
         visit = "<?php echo $visit ?>";
         week = "<?php echo $week ?>";
-        feedbackLink = "https://yalesurvey.ca1.qualtrics.com/jfe/form/SV_5BB0Y7nlPJ3Nw1g?interview_age=<?php echo $ageInMonths ?>&src_subject_id=<?php echo $consortId ?>&study_id=<?php echo $labId ?>&subjectkey=<?php echo $subjectKey ?>&site=<?php echo $institutionAlias ?>&sex=<?php echo $sexAtBirth ?>&phenotype=<?php echo $groupStatus ?>&candidateId=<?php echo $candidateId ?>&visit=<?php echo $visit ?>";
+        feedbackLink = "https://yalesurvey.ca1.qualtrics.com/jfe/form/SV_0chMnwD9uK8Aaiy?interview_age=<?php echo $ageInMonths ?>&src_subject_id=<?php echo $consortId ?>&study_id=<?php echo $labId ?>&subjectkey=<?php echo $subjectKey ?>&site=<?php echo $institutionAlias ?>&sex=<?php echo $sexAtBirth ?>&phenotype=<?php echo $groupStatus ?>&candidateId=<?php echo $candidateId ?>&visit=<?php echo $visit ?>";
       }
     }
 
@@ -154,7 +153,7 @@ $fileArrayPracticeJSON = json_encode($fileArrayPractice);
       sexAtBirth = "";
       siteNumber = "";
       ageAtAssessment = "";
-      feedbackLink = "";
+      feedbackLink = "https://yalesurvey.ca1.qualtrics.com/jfe/form/SV_0chMnwD9uK8Aaiy?interview_age=<?php echo $ageInMonths ?>&src_subject_id=<?php echo $consortId ?>&study_id=<?php echo $labId ?>&subjectkey=<?php echo $subjectKey ?>&site=<?php echo $institutionAlias ?>&sex=<?php echo $sexAtBirth ?>&phenotype=<?php echo $groupStatus ?>&candidateId=<?php echo $candidateId ?>&visit=<?php echo $visit ?>";
       visit = "";
       week = "";
     } else if (db_connection === true) {
@@ -166,7 +165,7 @@ $fileArrayPracticeJSON = json_encode($fileArrayPractice);
       ageAtAssessment = "<?php echo $ageInMonths ?>";
       visit = "<?php echo $visit ?>";
       week = "<?php echo $week ?>";
-      feedbackLink = "https://yalesurvey.ca1.qualtrics.com/jfe/form/SV_5BB0Y7nlPJ3Nw1g?interview_age=<?php echo $ageInMonths ?>&src_subject_id=<?php echo $consortId ?>&study_id=<?php echo $labId ?>&subjectkey=<?php echo $subjectKey ?>&site=<?php echo $institutionAlias ?>&sex=<?php echo $sexAtBirth ?>&phenotype=<?php echo $groupStatus ?>&candidateId=<?php echo $candidateId ?>&visit=<?php echo $visit ?>";
+      feedbackLink = "https://yalesurvey.ca1.qualtrics.com/jfe/form/SV_0chMnwD9uK8Aaiy?interview_age=<?php echo $ageInMonths ?>&src_subject_id=<?php echo $consortId ?>&study_id=<?php echo $labId ?>&subjectkey=<?php echo $subjectKey ?>&site=<?php echo $institutionAlias ?>&sex=<?php echo $sexAtBirth ?>&phenotype=<?php echo $groupStatus ?>&candidateId=<?php echo $candidateId ?>&visit=<?php echo $visit ?>";
     }
   </script>
 </footer>
