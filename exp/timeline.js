@@ -1,5 +1,6 @@
 let timeline = [];
 
+// hello
 let instructions0 = {
   type: "html-keyboard-response",
   stimulus: '<p style="font-size:26px;"> Hello and thank you for taking part in our experiment! </p>' +
@@ -8,7 +9,7 @@ let instructions0 = {
   choices: [32],
 };
 
-
+// please be in the task
 let instructions1 = {
   type: "html-keyboard-response",
   stimulus: '<p style="font-size:26px;"> Please ensure the following: </p>' +
@@ -19,38 +20,19 @@ let instructions1 = {
   choices: [32],
 };
 
+// first description of the stimuli/videos
 let instructions2 = {
   type: "html-keyboard-response",
   stimulus: '<p style="font-size:26px;"> Human Detection Task </p>' +
     '<p style="font-size:22px;"> In this task, you will see a series of videos containing one or two people. </p>' +
-    '<p style="font-size:22px;"> In half of the videos there will be two people -one on each side of the screen-, but one person will be masked with a cloud of white dots. </p>' +
-    '<p style="font-size:22px;"> For the other half of the videos there will be only one person on one side, and in the other side there will be only a cloud of white dots. </p>' +
-    '<p style="font-size:22px;"> Your job is to detect if there is a person within the cloud of white dots. </p>' +
-    '<p style="font-size:22px;"> For each display, please report as accurately as possible whether you saw two people or not. </p>' +
-    '<p style="font-size:22px;"> Press "J" for saying "Yes, I saw a second person". </p>' +
-    '<p style="font-size:22px;"> Press "F" to say "No, I did not see a second person". </p>' +
+    '<p style="font-size:22px;"> In half of the videos there will be two people -one on each side of the screen-, but one person will be masked with moving dots. </p>' +
+    '<p style="font-size:22px;"> For the other half of the videos there will be only one person on one side, and on the other side there will be only moving  dots. </p>' +
+    '<p style="font-size:22px;"> In the next screen, you will see three example videos with two people. One person will be masked with few moving dots. You do not need to do anything now, just see. </p>' +
     '<p style="font-size:24px;"> <i> Press the spacebar to continue. </i> </p>',
   choices: [32],
 };
 
-let instructions3 = {
-  type: "html-keyboard-response",
-  stimulus: '<p style="font-size:22px;"> After detecting ("J") or not detecting ("F") the second person, you will be asked how confident you were with your choice. </p>' + 
-    '<p style="font-size:22px;"> Press to buttons 1, 2, 3, 4, or 5 to rate your confidence level, where 1 is not confident at all and 5 is very confident. </p>' + 
-    '<p style="font-size:22px;"> The first part of the Human Detection Task is a practice block. Here you will see 4 displays and feedback will be provided (you will see a "correct" or an "incorrect" word on the screen). </p>' + 
-    '<p style="font-size:22px;"> The second part of the task is the testing block. You will see 72 displays, and no feedback will be provided. </p>' + 
-    '<p style="font-size:24px;"> <i> Press the spacebar to continue. </i> </p>',
-  choices: [32],
-};
-
-let instructions4 = {
-  type: "html-keyboard-response",
-  stimulus: '<p style="font-size:22px;"> Finally, after this screen you will start the task. </p>' +
-    '<p style="font-size:22px;"> If you are ready to invest the next 15 minutes completing the study and responding the questionnaires then: </p>' +
-    '<p style="font-size:24px;"> <i> Press the spacebar to start. </i> </p>',
-  choices: [32],
-};
-
+// fixation for the trial
 let fixation = {
   type: "html-keyboard-response",
   stimulus: '<div style="font-size:60px; color:white;">+</div>',
@@ -58,6 +40,7 @@ let fixation = {
   trial_duration: 1000
 };
 
+// trial object
 let trial = {
   type: "video-keyboard-response",
   sources: jsPsych.timelineVariable("stimulus"),
@@ -67,6 +50,63 @@ let trial = {
   response_ends_trial: false,
 };
 
+// videos with two people
+let procedureSignalExample = {
+  timeline: [trial],
+  timeline_variables: trialSignalExample,
+  choices: [70, 74],
+};
+
+// after seeing videos with two people
+let instructions3 = {
+  type: "html-keyboard-response",
+  stimulus: '<p style="font-size:26px;"> Human Detection Task </p>' +
+    '<p style="font-size:22px;"> In these videos may have seen two people, one on each side of the screen. </p>' +
+    '<p style="font-size:22px;"> As you may have noticed, one of the human shapes had extra moving dots and less dots conforming the human shape. But you are still able to idenfity a human form. </p>' +
+    '<p style="font-size:22px;"> In the next screen, you will see three example videos with only one person on one side, and on the other side you will only see moving dots. </p>' +
+    '<p style="font-size:24px;"> <i> Press the spacebar to continue. </i> </p>',
+  choices: [32],
+};
+
+// videos with one person
+let procedureNoiseExample = {
+  timeline: [fixation, trial],
+  timeline_variables: trialNoiseExample,
+  choices: [70, 74],
+};
+
+// after seeing videos with one person
+let instructions4 = {
+  type: "html-keyboard-response",
+  stimulus: '<p style="font-size:26px;"> Human Detection Task </p>' +
+    '<p style="font-size:22px;"> Your job is to detect if there is a person within the moving dots part of the screen. </p>' +
+    '<p style="font-size:22px;"> For each video, please report as accurately as possible whether you saw two people or only one. </p>' +
+    '<p style="font-size:22px;"> Press "J" for saying "Yes, I saw a second person". </p>' +
+    '<p style="font-size:22px;"> Press "F" to say "No, I did not see a second person". </p>' +
+    '<p style="font-size:24px;"> <i> Press the spacebar to continue. </i> </p>',
+  choices: [32],
+};
+
+// behavioural instructions and keyboard presses
+let instructions5 = {
+  type: "html-keyboard-response",
+  stimulus: '<p style="font-size:22px;"> After detecting ("J") or not detecting ("F") the second person, you will be asked how confident you were with your choice. </p>' + 
+    '<p style="font-size:22px;"> Press to buttons 1, 2, 3, 4, or 5 to rate your confidence level, where 1 is not confident at all and 5 is very confident. </p>' + 
+    '<p style="font-size:22px;"> The task consist in 72 test videos, which will not be as easy as the example videos that you just saw. </p>' + 
+    '<p style="font-size:24px;"> <i> Press the spacebar to continue. </i> </p>',
+  choices: [32],
+};
+
+// ready to start?
+let instructions6 = {
+  type: "html-keyboard-response",
+  stimulus: '<p style="font-size:22px;"> Finally, after this screen you will start the task. </p>' +
+    '<p style="font-size:22px;"> If you are ready to start and coompleting the study and responding the questionnaires then: </p>' +
+    '<p style="font-size:24px;"> <i> Press the spacebar to start. </i> </p>',
+  choices: [32],
+};
+
+// behaviour - detection
 let detection = {
   type: "html-keyboard-response",
   stimulus: '<div style="font-size:24px; color:white;">Did you see a person in the cloud?</div>' + 
@@ -88,6 +128,7 @@ let detection = {
   }
 };
 
+// behaviour - confidence
 let confidence = {
   type: "html-keyboard-response",
   stimulus: '<div style="font-size:24px; color:white;">How confident are you? (from 1 to 5)</div>'+ 
@@ -119,27 +160,14 @@ let confidence = {
   }
 };
 
-let procedurePractice = {
-  timeline: [fixation, trial],
-  timeline_variables: trialsPractice,
-  choices: [70, 74],
-};
-
-let instructions5 = {
-  type: "html-keyboard-response",
-  stimulus: '<p style="font-size:26px;"> The practice trials are now over, and the next trials are real. </p>' +
-    '<p style="font-size:22px;"> In the next set of testing trials you will not have feedback. </p>' +
-    '<p style="font-size:22px;"> Please do your best to pay attention throughout the experiment, since your data will be useful to us only if you stay focused and continue to respond as accurately as possible all the way until the end. </p>' +
-    '<p style="font-size:24px;"> <i> Press the spacebar to begin. </i> </p>',
-  choices: [32],
-};
-
+// test trial procedure
 let procedureTest = {
   timeline: [fixation, trial, detection, confidence],
   timeline_variables: trialsTest,
   choices: [70, 74],
 };
 
+// save data at the end of task
 let dataSave = {
   type: "html-keyboard-response",
   stimulus: "<p style='color:white;'>Data saving...</p>" +
