@@ -61,7 +61,7 @@ let procedureSignalExample = {
 let instructions3 = {
   type: "html-keyboard-response",
   stimulus: '<p style="font-size:26px;"> Human Detection Task </p>' +
-    '<p style="font-size:22px;"> In these videos may have seen two people, one on each side of the screen. </p>' +
+    '<p style="font-size:22px;"> In these videos you should have seen two people, one on each side of the screen. </p>' +
     '<p style="font-size:22px;"> As you may have noticed, one of the human shapes had extra moving dots and less dots conforming the human shape. But you are still able to idenfity a human form. </p>' +
     '<p style="font-size:22px;"> In the next screen, you will see three example videos with only one person on one side, and on the other side you will only see moving dots. </p>' +
     '<p style="font-size:24px;"> <i> Press the spacebar to continue. </i> </p>',
@@ -79,7 +79,7 @@ let procedureNoiseExample = {
 let instructions4 = {
   type: "html-keyboard-response",
   stimulus: '<p style="font-size:26px;"> Human Detection Task </p>' +
-    '<p style="font-size:22px;"> Your job is to detect if there is a person within the moving dots part of the screen. </p>' +
+    '<p style="font-size:22px;"> Your job will be to detect if there is a person within the moving dots part of the screen. </p>' +
     '<p style="font-size:22px;"> For each video, please report as accurately as possible whether you saw two people or only one. </p>' +
     '<p style="font-size:22px;"> Press "J" for saying "Yes, I saw a second person". </p>' +
     '<p style="font-size:22px;"> Press "F" to say "No, I did not see a second person". </p>' +
@@ -110,7 +110,7 @@ let instructions6 = {
 let detection = {
   type: "html-keyboard-response",
   stimulus: '<div style="font-size:24px; color:white;">Did you see a person in the cloud?</div>' + 
-    '<p style="font-size:24px;"> <i> Press "J" for Yes AND "F" for No. </i> </p>',
+    '<p style="font-size:24px;"> <i> Press "F" for No AND "J" for Yes. </i> </p>',
   data: jsPsych.timelineVariable("data"),
   choices: [70, 74],
   on_finish: function (data) {
@@ -118,10 +118,10 @@ let detection = {
     data.workerId = workerId;
     let response = data.key_press;
     switch (response) {
-      case 78: 
+      case 70: 
         data.response = "no";
       break;
-      case 89:
+      case 74:
         data.response = "yes";
       break;
     }
@@ -199,7 +199,7 @@ let dataSave = {
 let end = {
   type: "html-keyboard-response",
   stimulus: "<p style='color:white;'>Thank you!</p>" +
-    "<p style='color:white;'>You have successfully completed the experiment and your data has been saved.</p>" +
+    "<p style='color:white;'>You have successfully completed the Human Detection Task and your data has been saved.</p>" +
     "<p style='color:white;'>To proceed to the next section of this experiment, please click the following link:</p>" +
     // "<p style='color:white;'>To leave feedback on this task, please click the following link:</p>"+
     "<p style='color:white;'><a href="+ feedbackLink +">Go to questionnaires!</a></p>",
