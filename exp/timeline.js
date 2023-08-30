@@ -91,7 +91,7 @@ let instructions4 = {
 let instructions5 = {
   type: "html-keyboard-response",
   stimulus: '<p style="font-size:22px;"> After detecting ("J") or not detecting ("F") the second person, you will be asked how confident you were with your choice. </p>' + 
-    '<p style="font-size:22px;"> Press to buttons 1, 2, 3, 4, or 5 to rate your confidence level, where 1 is not confident at all and 5 is very confident. </p>' + 
+    '<p style="font-size:22px;"> Press 1, 2, 3, 4, or 5 on your keyboard to rate your confidence level, where 1 is not confident at all and 5 is very confident. </p>' + 
     '<p style="font-size:22px;"> The task consist in 72 test videos, which will not be as easy as the example videos that you just saw. </p>' + 
     '<p style="font-size:24px;"> <i> Press the spacebar to continue. </i> </p>',
   choices: [32],
