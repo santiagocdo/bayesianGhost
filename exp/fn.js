@@ -1,5 +1,6 @@
 /* start the experiment */
 function startExperiment() {
+  openFullscreen();
   jsPsych.init({
     timeline: timeline,
     show_progress_bar: true,
