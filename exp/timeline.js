@@ -109,7 +109,7 @@ let instructions6 = {
 // behaviour - detection
 let detection = {
   type: "html-keyboard-response",
-  stimulus: '<div style="font-size:24px; color:white;">Did you see a person in the cloud?</div>' + 
+  stimulus: '<div style="font-size:24px; color:white;">Did you see a second person in the moving dots?</div>' + 
     '<p style="font-size:24px;"> <i> Press "F" for No or "J" for Yes. </i> </p>',
   data: jsPsych.timelineVariable("data"),
   choices: [70, 74],
@@ -132,7 +132,7 @@ let detection = {
 let confidence = {
   type: "html-keyboard-response",
   stimulus: '<div style="font-size:24px; color:white;">How confident are you? (from 1 to 5)</div>'+ 
-  '<p style="font-size:24px;"> <i> 1 = No confident at all, 5 = Very confident. </i> </p>',
+  '<p style="font-size:24px;"> <i> 1 = Not confident at all, 5 = Very confident. </i> </p>',
   data: jsPsych.timelineVariable("data"),
   choices: [49, 50, 51, 52, 53],
   on_finish: function (data) {
