@@ -27,7 +27,7 @@ $fileArrayPracticeJSON = json_encode($fileArrayPractice);
 <html>
 
 <head>
-  <title>jsPsych Template</title>
+  <title>Human Detection Task</title>
   <script>
     //onbeforeunload in body
     function areYouSure() {
