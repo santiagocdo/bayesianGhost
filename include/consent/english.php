@@ -20,7 +20,7 @@
       
  </h2>
     <p id="consentInstructions" class="consent" style="color: black">
-      <b>Study Title:</b> Beliefs and Personality Traits
+      <b>Study Title:</b> Human Detection Task
       <br><br>
       <b>Principal Investigator:</b> Philip R. Corlett, PhD
       <br><br>
