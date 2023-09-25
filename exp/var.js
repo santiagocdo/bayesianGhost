@@ -54,15 +54,21 @@ for (let i = 0; i < randNoiseExample.length; i++) {
 }
 
 
-// # # # # (3) create trials object # # # # 
+// # # # # (3) create trials object # # # #
 let trialsTest = [];
 // add ghost videos' location to trialsTest array
 for (let i = 0; i < randTrialsTest.length; i++) {
     trialsTest.push({
         stimulus: [ghostTest[i]],
         data: {
-            stim: ghostTest[i]
+            stim: ghostTest[i],
+            noise: ghostTest[i].split("_")[0].slice(-3),
+            action: ghostTest[i].split("_")[1].slice(3,5),
+            scramble: ghostTest[i].split("_")[2].slice(3,4),
+            communicative: ghostTest[i].split("_")[3].slice(3,4),
+            trial_number: ghostTest[i].split("_")[4].slice(3,-4),
         }
+        
     });
 }
 let trialSignalExample = []
@@ -71,7 +77,12 @@ for (let i = 0; i < randSignalExample.length; i++) {
     trialSignalExample.push({
         stimulus: [ghostSignalExample[i]],
         data: {
-            stim: ghostSignalExample[i]
+            stim: ghostSignalExample[i],
+            noise: ghostSignalExample[1].split("_")[0].slice(17,20),
+            action: ghostSignalExample[i].split("_")[1].slice(3,5),
+            scramble: ghostSignalExample[i].split("_")[2].slice(3,4),
+            communicative: ghostSignalExample[i].split("_")[3].slice(3,4),
+            trial_number: ghostSignalExample[i].split("_")[4].slice(3,-4),
         }
     });
 }
@@ -81,7 +92,12 @@ for (let i = 0; i < randNoiseExample.length; i++) {
     trialNoiseExample.push({
         stimulus: [ghostNoiseExample[i]],
         data: {
-            stim: ghostNoiseExample[i]
+            stim: ghostNoiseExample[i],
+            noise: ghostNoiseExample[1].split("_")[0].slice(17,20),
+            action: ghostNoiseExample[i].split("_")[1].slice(3,5),
+            scramble: ghostNoiseExample[i].split("_")[2].slice(3,4),
+            communicative: ghostNoiseExample[i].split("_")[3].slice(3,4),
+            trial_number: ghostNoiseExample[i].split("_")[4].slice(3,-4),
         }
     });
 }

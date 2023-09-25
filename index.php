@@ -15,7 +15,7 @@ foreach ($filesTest as $file) {
 }
 foreach ($filesPractice as $file) {
   if ($file !== '.' && $file !== '..') {
-      $fileArrayPractice[] = $file;
+    $fileArrayPractice[] = $file;
   }
 }
 

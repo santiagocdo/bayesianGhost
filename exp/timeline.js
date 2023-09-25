@@ -35,9 +35,20 @@ let instructions2 = {
 // fixation for the trial
 let fixation = {
   type: "html-keyboard-response",
+  data: jsPsych.timelineVariable("data"), // if .data is going to be used then need to import it with jsPsych.timelineVariable("data")
   stimulus: '<div style="font-size:60px; color:white;">+</div>',
+  on_start: (fixation) => {
+    // to access curent trial data use jsPsych.currentTrial().data.
+    var currentData = jsPsych.currentTrial().data;
+    // if even number actions are left and odd number actions are right (see codes in var.js)
+    if (parseInt(currentData.action)%2 == 0) {
+      fixation.stimulus = '<div id="left-fixation" style="font-size: 60px; color: white; position: absolute; left: 40%; top: 50%; transform: translate(-50%, -50%);">+</div>';
+    } else {
+      fixation.stimulus = '<div id="right-fixation" style="font-size: 60px; color: white; position: absolute; left: 60%; top: 50%; transform: translate(-50%, -50%);">+</div>';
+    }
+  },
   choices: jsPsych.NO_KEYS,
-  trial_duration: 1000
+  trial_duration: 1000,
 };
 
 // trial object
@@ -45,14 +56,14 @@ let trial = {
   type: "video-keyboard-response",
   sources: jsPsych.timelineVariable("stimulus"),
   data: jsPsych.timelineVariable("data"),
-  response_allowed_while_playing: false, // Sant 15/08/2023
+  response_allowed_while_playing: true, // Sant 15/08/2023
   trial_ends_after_video: true,
   response_ends_trial: false,
 };
 
 // videos with two people
 let procedureSignalExample = {
-  timeline: [trial],
+  timeline: [fixation, trial],
   timeline_variables: trialSignalExample,
   choices: [70, 74],
 };
