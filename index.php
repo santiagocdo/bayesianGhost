@@ -40,7 +40,6 @@ $fileArrayPracticeJSON = json_encode($fileArrayPractice);
     const language = "<?php echo $language; ?>";
     const stimArrayTest = <?php echo $fileArrayTestJSON; ?>;
     const stimArrayPractice = <?php echo $fileArrayPracticeJSON; ?>;
-
   </script>
   <script type="text/javascript" src="db/validate.js"></script>
   <script type="text/javascript" src="jQuery/jquery-3.5.1.min.js"></script>
