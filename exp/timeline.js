@@ -65,7 +65,7 @@ let trial = {
 let procedureSignalExample = {
   timeline: [fixation, trial],
   timeline_variables: trialSignalExample,
-  choices: [70, 74],
+  // choices: [70, 74],
 };
 
 // after seeing videos with two people
@@ -83,7 +83,7 @@ let instructions3 = {
 let procedureNoiseExample = {
   timeline: [fixation, trial],
   timeline_variables: trialNoiseExample,
-  choices: [70, 74],
+  // choices: [70, 74],
 };
 
 // after seeing videos with one person
@@ -153,19 +153,19 @@ let confidence = {
     let response = data.key_press;
     switch (response) {
       case 49:
-        data.response = "1";
+        data.confidence = "1";
       break;
       case 50: 
-        data.response = "2";
+        data.confidence = "2";
       break;
       case 51: 
-        data.response = "3";
+        data.confidence = "3";
       break;
       case 52: 
-        data.response = "4";
+        data.confidence = "4";
       break;
       case 53: 
-        data.response = "5";
+        data.confidence = "5";
       break;
     }
   }
@@ -175,7 +175,7 @@ let confidence = {
 let procedureTest = {
   timeline: [fixation, trial, detection, confidence],
   timeline_variables: trialsTest,
-  choices: [70, 74],
+  // choices: [70, 74],
 };
 
 // save data at the end of task
@@ -211,15 +211,16 @@ let end = {
   type: "html-keyboard-response",
   stimulus: "<p style='color:white;'>Thank you!</p>" +
     "<p style='color:white;'>You have successfully completed the Human Detection Task and your data has been saved.</p>" +
-    "<p style='color:white;'>To proceed to the next section of this experiment, please click the following link:</p>" +
+    "<p style='color:white;'>You will redirected to the Qualtrics questionnaires, if you are not redirected please click <a href="+ feedbackLink +">here</a>.</p>",
     // "<p style='color:white;'>To leave feedback on this task, please click the following link:</p>"+
-    "<p style='color:white;'><a href="+ feedbackLink +">Go to questionnaires!</a></p>",
+    // "<p style='color:white;'><a href="+ feedbackLink +">Go to questionnaires!</a></p>",
     // "<p style='color:white;'>Please wait for the experimenter to continue.</p>"+
     //"<p style='color:white;'><i>You may now close the expriment window at anytime.</i></p>",
   choices: jsPsych.NO_KEYS,
-  // on_load: function() {
-  //   alert(reward);
-  // }
+  trial_duration: 5000,
+  on_finish: function() {
+    window.location.replace(feedbackLink);
+  }
 };
 
 $.getScript("exp/main.js");
