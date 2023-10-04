@@ -127,6 +127,7 @@ let detection = {
   on_finish: function (data) {
     data.index = trialIterator;
     data.workerId = workerId;
+    data.interview_date = today;
     let response = data.key_press;
     switch (response) {
       case 70: 
@@ -149,6 +150,7 @@ let confidence = {
   on_finish: function (data) {
     data.index = trialIterator;
     data.workerId = workerId;
+    data.interview_date = today;
     trialIterator ++;
     let response = data.key_press;
     switch (response) {
