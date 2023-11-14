@@ -26,9 +26,30 @@ let instructions2 = {
   stimulus: '<p style="font-size:26px;"> Human Detection Task </p>' +
     '<p style="font-size:22px;"> In this task, you will see a series of videos containing one or two people. </p>' +
     '<p style="font-size:22px;"> In half of the videos there will be two people -one on each side of the screen-, but one person will be masked with moving dots. </p>' +
-    '<p style="font-size:22px;"> For the other half of the videos there will be only one person on one side, and on the other side there will be only moving  dots. </p>' +
-    '<p style="font-size:22px;"> In the next screen, you will see three example videos with two people. One person will be masked with few moving dots. You do not need to do anything now, just see. </p>' +
+    '<p style="font-size:22px;"> For the other half of the videos there will be only one person on one side, and on the other side there will be only moving dots. </p>' +
     '<p style="font-size:24px;"> <i> Press the spacebar to continue. </i> </p>',
+  choices: [32],
+};
+
+// after seeing videos with one person
+let instructions3 = {
+  type: "html-keyboard-response",
+  stimulus: '<p style="font-size:26px;"> Human Detection Task </p>' +
+    '<p style="font-size:22px;"> Your job will be to report if you see or not a second person within the moving dots part of the screen. </p>' +
+    '<p style="font-size:22px;"> Please report as accurately as possible whether you saw two people or only one. </p>' +
+    '<p style="font-size:22px;"> Press "J" for saying "Yes, I saw a second person". </p>' +
+    '<p style="font-size:22px;"> Press "F" to say "No, I did not see a second person". </p>' +
+    '<p style="font-size:24px;"> <i> Press the letter J to continue. </i> </p>',
+  choices: [74],
+};
+
+// after seeing videos with one person
+let instructions4 = {
+  type: "html-keyboard-response",
+  stimulus: '<p style="font-size:26px;"> Human Detection Task </p>' +
+    '<p style="font-size:22px;"> Before starting the test videos, you will see practice videos in which feedback will provided after your response. </p>' +
+    '<p style="font-size:22px;"> Remember press "J" if you see a second person or press "F" if you do not see it. </p>' +
+    '<p style="font-size:24px;"> <i> Press the spacebar to start the practice trials. </i> </p>',
   choices: [32],
 };
 
@@ -49,72 +70,6 @@ let fixation = {
   },
   choices: jsPsych.NO_KEYS,
   trial_duration: 1000,
-};
-
-// trial object
-let trial = {
-  type: "video-keyboard-response",
-  sources: jsPsych.timelineVariable("stimulus"),
-  data: jsPsych.timelineVariable("data"),
-  response_allowed_while_playing: true, // Sant 15/08/2023
-  trial_ends_after_video: true,
-  response_ends_trial: false,
-};
-
-// videos with two people
-let procedureSignalExample = {
-  timeline: [fixation, trial],
-  timeline_variables: trialSignalExample,
-  // choices: [70, 74],
-};
-
-// after seeing videos with two people
-let instructions3 = {
-  type: "html-keyboard-response",
-  stimulus: '<p style="font-size:26px;"> Human Detection Task </p>' +
-    '<p style="font-size:22px;"> In these videos you should have seen two people, one on each side of the screen. </p>' +
-    '<p style="font-size:22px;"> As you may have noticed, one of the human shapes had extra moving dots and less dots conforming the human shape. But you are still able to idenfity a human form. </p>' +
-    '<p style="font-size:22px;"> In the next screen, you will see three example videos with only one person on one side, and on the other side you will only see moving dots. </p>' +
-    '<p style="font-size:24px;"> <i> Press the spacebar to continue. </i> </p>',
-  choices: [32],
-};
-
-// videos with one person
-let procedureNoiseExample = {
-  timeline: [fixation, trial],
-  timeline_variables: trialNoiseExample,
-  // choices: [70, 74],
-};
-
-// after seeing videos with one person
-let instructions4 = {
-  type: "html-keyboard-response",
-  stimulus: '<p style="font-size:26px;"> Human Detection Task </p>' +
-    '<p style="font-size:22px;"> Your job will be to detect if there is a person within the moving dots part of the screen. </p>' +
-    '<p style="font-size:22px;"> For each video, please report as accurately as possible whether you saw two people or only one. </p>' +
-    '<p style="font-size:22px;"> Press "J" for saying "Yes, I saw a second person". </p>' +
-    '<p style="font-size:22px;"> Press "F" to say "No, I did not see a second person". </p>' +
-    '<p style="font-size:24px;"> <i> Press the spacebar to continue. </i> </p>',
-  choices: [32],
-};
-
-// behavioural instructions and keyboard presses
-let instructions5 = {
-  type: "html-keyboard-response",
-  stimulus: '<p style="font-size:22px;"> After detecting ("J") or not detecting ("F") the second person, you will be asked how confident you were with your choice. </p>' + 
-    '<p style="font-size:22px;"> Press 1, 2, 3, 4, or 5 on your keyboard to rate your confidence level, where 1 is not confident at all and 5 is very confident. </p>' + 
-    '<p style="font-size:22px;"> The task consist in 72 test videos, which will not be as easy as the example videos that you just saw. </p>' + 
-    '<p style="font-size:24px;"> <i> Press the spacebar to continue. </i> </p>',
-  choices: [32],
-};
-
-// ready to start?
-let instructions6 = {
-  type: "html-keyboard-response",
-  stimulus: '<p style="font-size:22px;"> Finally, after this screen you will start the task. </p>' +
-    '<p style="font-size:22px;"> If you are ready to start and coompleting the study and responding the questionnaires then: </p>' +
-    '<p style="font-size:24px;"> <i> Press the spacebar to start. </i> </p>',
-  choices: [32],
 };
 
 // behaviour - detection
@@ -138,6 +93,34 @@ let detection = {
       break;
     }
   }
+};
+
+let feedback = {
+  type: "html-keyboard-response",
+  stimulus: feedbackGenerator,
+  choices: jsPsych.NO_KEYS,
+  trial_duration: feedbackDuration,
+  on_load: function (data) {
+    let response = jsPsych.data.get().last(1).values()[0].key_press;
+    let scramble = jsPsych.data.get().last(1).values()[0].scramble;
+    switch (response) {
+      case 70: 
+        if (scramble == '0') {
+          document.getElementById("feedback").innerHTML = "incorrect";
+        } else if (scramble == '1') {
+          document.getElementById("feedback").innerHTML = "correct";
+        } 
+        break;
+
+      case 74:
+        if (scramble == '1') {
+          document.getElementById("feedback").innerHTML = "incorrect";
+        } else if (scramble == '0') {
+          document.getElementById("feedback").innerHTML = "correct";
+        } 
+        break;
+    }
+  },
 };
 
 // behaviour - confidence
@@ -171,6 +154,41 @@ let confidence = {
       break;
     }
   }
+};
+
+// trial object
+let trial = {
+  type: "video-keyboard-response",
+  sources: jsPsych.timelineVariable("stimulus"),
+  data: jsPsych.timelineVariable("data"),
+  response_allowed_while_playing: true, // Sant 15/08/2023
+  trial_ends_after_video: true,
+  response_ends_trial: false,
+};
+
+// videos with two people
+let procedurePractice = {
+  timeline: [fixation, trial, detection, feedback],
+  timeline_variables: trialsPractice,
+};
+
+// behavioural instructions and keyboard presses
+let instructions5 = {
+  type: "html-keyboard-response",
+  stimulus: '<p style="font-size:22px;"> In addition to report seeing ("J") or not ("F") the second person, in the test trials you will be asked how confident you were with your choice. </p>' + 
+    '<p style="font-size:22px;"> Press 1, 2, 3, 4, or 5 on your keyboard to rate your confidence level, where 1 is not confident at all and 5 is very confident. </p>' +
+    '<p style="font-size:24px;"> <i> Press the number 5 to continue. </i> </p>',
+  choices: [53],
+};
+
+// ready to start?
+let instructions6 = {
+  type: "html-keyboard-response",
+  stimulus: '<p style="font-size:22px;"> Finally, after this screen you will start the task. </p>' +
+    '<p style="font-size:22px;"> The task consist in 72 test videos, which will not be as easy as the practice videos that you just saw. </p>' + 
+    '<p style="font-size:22px;"> If you are ready to start and coompleting the study and responding the questionnaires then: </p>' +
+    '<p style="font-size:24px;"> <i> Press the spacebar to start. </i> </p>',
+  choices: [32],
 };
 
 // test trial procedure
