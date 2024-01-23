@@ -28,5 +28,5 @@ if (participantId != "") {
 // // specific config parameters for perceivedAnimacy[chase-confidence]
 // duration of feedback used in practice trials
 const feedbackDuration = 1000;
-const numberTrialsTest = 6; // 72
-const numberTrialsPractice = 1; // x 6, one for each action
+const numberTrialsTest = 72; // 72
+const numberTrialsPractice = 2; // x 6, one for each action
