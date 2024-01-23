@@ -24,7 +24,7 @@
     </form> -->
     <form action="<?php echo SIGNUP_VIEW ?>/post/intakeadd.php" method="post">
     <p style="color:black"><b>Subject ID:</b></p>
-    <input required id="subjectid" type="text" name="subjectid" minlength="6" maxlength="6">
+    <input required id="subjectid" type="text" name="subjectid" minlength="5" maxlength="5">
     
     <!-- GUID -->
     <p style="color:black"><b>GUID:</b></p>
@@ -102,7 +102,7 @@
 <br>
 </div>
 <script>$("button.loadMain").click(function(){
-      //   $.getScript("exp/rand.js");
+      // $.getScript("exp/rand.js");
       $.getScript("exp/timeline.js");
       // $.getScript("exp/main.js");
   }); </script>

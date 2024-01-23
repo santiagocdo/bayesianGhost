@@ -1,5 +1,3 @@
-let timeline = [];
-
 // hello
 let instructions0 = {
   type: "html-keyboard-response",
@@ -81,8 +79,8 @@ let detection = {
   choices: [70, 74],
   on_finish: function (data) {
     data.index = trialIterator;
-    data.workerId = workerId;
-    data.interview_date = today;
+    // data.subjectId = subjectId;
+    // data.interview_date = today;
     let response = data.key_press;
     switch (response) {
       case 70: 
@@ -132,8 +130,8 @@ let confidence = {
   choices: [49, 50, 51, 52, 53],
   on_finish: function (data) {
     data.index = trialIterator;
-    data.workerId = workerId;
-    data.interview_date = today;
+    // data.subjectId = subjectId;
+    // data.interview_date = today;
     trialIterator ++;
     let response = data.key_press;
     switch (response) {
@@ -217,7 +215,7 @@ let dataSave = {
   choices: jsPsych.NO_KEYS,
   trial_duration: 5000,
   on_finish: function () {
-    saveData("ghost_" + workerId, jsPsych.data.get().csv()); //function with file name and which type of file as the 2 arguments
+    saveData(experimentAlias + "_" + subjectId, jsPsych.data.get().csv()); //function with file name and which type of file as the 2 arguments
     document.getElementById("unload").onbeforeunload = ''; //removes popup (are you sure you want to exit) since data is saved now
     // returns cursor functionality
     $(document).ready(function () {

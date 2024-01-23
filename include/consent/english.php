@@ -7,7 +7,7 @@
     <h1 class="loading">Loading...</h1>
   </div>
   <div id="consentHolder" class="consent centeredDiv">
-  <h3 id="consentPreamble" class="consent"> <br /> <br /> </h3>
+  <h3 id="consentPreamble" class="consent">In order for us to conduct this experiment online, we need to include the standard consent form below: <br /> <br /> </h3>
 
 <div id="consentForm" class="consent consent-box"> 
     <h2 id="consentHeading" class="consent">
@@ -20,7 +20,7 @@
       
  </h2>
     <p id="consentInstructions" class="consent" style="color: black">
-      <b>Study Title:</b> Human Detection Task
+      <b>Study Title:</b> Chasing Detection Task
       <br><br>
       <b>Principal Investigator:</b> Philip R. Corlett, PhD
       <br><br>
@@ -34,7 +34,7 @@
       <br>
       If you agree to participate in this study, this Human Intelligence Task (HIT) will require you to (1) play a computer game using the computer mouse or keys on your keyboard and (2) answer simple questions about your demographics, health (including mental health), beliefs, and personality through an interactive web survey. You will never be asked for personally identifiable information such as your name, address, or date of birth. 
       <br>
-      The experiment is designed to take approximately 1 hour. You will have up to six hours to complete the experiment and submit codes for credit. 
+      The experiment is designed to take approximately 30 mins. You will have up to six hours to complete the experiment and submit codes for credit. 
       <br><br>
       <u><b>Risks and Inconveniences</b></u>
       <br>
@@ -56,7 +56,7 @@
       <br><br>
       <u><b>Questions or Concerns</b></u>
       <br>
-      If you have any questions or concerns regarding the experiment, you may contact us here at the lab by emailing BLAMLabRequester@gmail.com If you have general questions about your rights as a research participant, you may contact the Yale University Human Investigation Committee at 203-785-4688 or human.subjects@yale.edu (HSC# 2000022111).
+      If you have any questions or concerns regarding the experiment, you may contact us here at the lab by emailing comppsyresgroup@gmail.com If you have general questions about your rights as a research participant, you may contact the Yale University Human Investigation Committee at 203-785-4688 or human.subjects@yale.edu (HSC# 2000022111).
 
     </p>
   </div>

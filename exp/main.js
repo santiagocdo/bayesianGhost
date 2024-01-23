@@ -1,4 +1,5 @@
-// main order in which things are pushed to timeline 
+let timeline = [];
+
 timeline.push(instructions0);
 timeline.push(instructions1);
 timeline.push(instructions2);
