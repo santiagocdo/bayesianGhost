@@ -7,7 +7,12 @@ Friedrich, E. V., Zillekens, I. C., Biel, A. L., O'Leary, D., Seegenschmiedt, E.
 Seeing a Bayesian ghost: Sensorimotor activation leads to an illusory social perception. iScience, 25(4), 104068.
 
 ### Preregistered hypothesis:
-[https://aspredicted.org/see_one.php](https://aspredicted.org/see_one.php)
+[https://aspredicted.org/75k6h.pdf](https://aspredicted.org/75k6h.pdf)
+
+## Branches:
+- main (Pilot 1)
+- signal-dots (Pilot 2)
+- super-training/massive-training (Experiment 1)
 
 
 ## Development Guide (How to test locally the current experiment):
