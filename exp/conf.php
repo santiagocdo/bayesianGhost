@@ -6,7 +6,7 @@
 
 // SET EXPERIMENT NAME
 $experimentName = 'Human Detection Task';
-$experimentAlias = 'ghost2';
+$experimentAlias = 'ghost3';
 
 // SELECT LANGUAGE
 $language = 'english';

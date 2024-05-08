@@ -1,26 +1,18 @@
 <?php
 require_once 'db/data.php';
 require_once 'exp/conf.php';
-$directoryPathTest = 'stim/test/';
-$directoryPathPractice = 'stim/practice/';
-$filesTest = scandir($directoryPathTest);
-$filesPractice = scandir($directoryPathPractice);
-$fileArrayTest = [];
-$fileArrayPractice = [];
+$directoryStim = 'stim/';
+$filesStim = scandir($directoryStim);
+$filesArrayStim = [];
 
-foreach ($filesTest as $file) {
-    if ($file !== '.' && $file !== '..') {
-        $fileArrayTest[] = $file;
-    }
-}
-foreach ($filesPractice as $file) {
+foreach ($filesStim as $file) {
   if ($file !== '.' && $file !== '..') {
-    $fileArrayPractice[] = $file;
+      $filesArrayStim[] = $file;
   }
 }
 
-$fileArrayTestJSON = json_encode($fileArrayTest);
-$fileArrayPracticeJSON = json_encode($fileArrayPractice);
+$filesArrayStimJSON = json_encode($filesArrayStim);
+
 ?>
 
 <!DOCTYPE html>
@@ -39,8 +31,7 @@ $fileArrayPracticeJSON = json_encode($fileArrayPractice);
   <!-- set js language variable from php variable in config.php -->
   <script>
     const language = "<?php echo $language; ?>";
-    const stimArrayTest = <?php echo $fileArrayTestJSON; ?>;
-    const stimArrayPractice = <?php echo $fileArrayPracticeJSON; ?>;
+    const stimArrayStim = <?php echo $filesArrayStimJSON; ?>;
   </script>
   <script type="text/javascript" src="db/validate.js"></script>
   <script type="text/javascript" src="jQuery/jquery-3.5.1.min.js"></script>

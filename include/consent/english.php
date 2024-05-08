@@ -20,7 +20,7 @@
       
  </h2>
     <p id="consentInstructions" class="consent" style="color: black">
-      <b>Study Title:</b> Chasing Detection Task
+      <b>Study Title:</b> Human Detection Task
       <br><br>
       <b>Principal Investigator:</b> Philip R. Corlett, PhD
       <br><br>
@@ -42,7 +42,7 @@
       <br><br>
       <u><b>Economic Considerations</b></u>
       <br>
-      You will receive the reward specified on the Mechanical-Turk HIT for completing both the game and the questionnaire. Payment for completion of the HIT is $6.00 USD. Upon finishing the game and submitting the questionnaire, you will receive a completion code number. Please record this completion code and submit it for payment.
+      You will receive the reward specified on Connect (CloudResearch) for completing both the game and the questionnaire. Payment for completion of the HIT is $6.00 with a $2.00 bonus to individuals who score in the top 25% on the human detection game. Upon finishing the game and submitting the questionnaire, you will receive a Completion Code. Please record this numbers and submit it for payment.
       <br><br>
       <u><b>Confidentiality</b></u>
       <br>

@@ -4,29 +4,29 @@
 
 // SET EXPERIMENT NAME
 const experimentName = "Human Detection Task";
-const experimentAlias = "ghost2";
-const version = "signal-dots";
+const experimentAlias = "ghost3";
+const version = "super-training";
 
 // SET SUBJECT IDENTIFICATION
 const workerId = getParamFromURL('workerId');
 if (workerId != "") {
   var subjectId = workerId;
-  var feedbackLink = "https://yalesurvey.ca1.qualtrics.com/jfe/form/SV_3K4vrvK9XpebRVc?workerId=" + subjectId;
+  var feedbackLink = "https://yalesurvey.ca1.qualtrics.com/jfe/form/SV_5z1aY15F6rS3jSe?workerId=" + subjectId;
 }
 const PROLIFIC_PID = getParamFromURL('PROLIFIC_PID');
 if (PROLIFIC_PID != "") {
   var subjectId = PROLIFIC_PID;
-  var feedbackLink = "https://yalesurvey.ca1.qualtrics.com/jfe/form/SV_3K4vrvK9XpebRVc?PROLIFIC_PID=" + subjectId;
+  var feedbackLink = "https://yalesurvey.ca1.qualtrics.com/jfe/form/SV_5z1aY15F6rS3jSe?PROLIFIC_PID=" + subjectId;
 }
 const participantId = getParamFromURL('participantId');
 if (participantId != "") {
   var subjectId = participantId;
-  var feedbackLink = "https://yalesurvey.ca1.qualtrics.com/jfe/form/SV_3K4vrvK9XpebRVc?participantId=" + subjectId;
+  var feedbackLink = "https://yalesurvey.ca1.qualtrics.com/jfe/form/SV_5z1aY15F6rS3jSe?participantId=" + subjectId;
 }
 // note: subjectId will be your unique indentifier that will be used in .js files
 
 // // specific config parameters for perceivedAnimacy[chase-confidence]
 // duration of feedback used in practice trials
 const feedbackDuration = 1000;
-const numberTrialsTest = 72; // 72
-const numberTrialsPractice = 2; // x 6, one for each action
+const numberTrialsTest = 4; // 72
+const numberTrialsPractice = 4; // before it was as 2. (x 6, one for each action)
