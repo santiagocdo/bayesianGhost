@@ -2,7 +2,7 @@
 let instructions0 = {
   type: "html-keyboard-response",
   stimulus: '<p style="font-size:26px;"> Hello and thank you for taking part in our experiment! </p>' +
-    '<p style="font-size:24px;"> The experiment consist of a Human Detection Task followed by questionnaires, and it takes around 30 minutes to complete. </p>' +
+    '<p style="font-size:24px;"> The experiment consists of a Human Detection Task followed by questionnaires, and it takes around 30 minutes to complete. </p>' +
     '<p style="font-size:22px;"> <i> Press the spacebar to continue. </i> </p>',
   choices: [32],
 };
@@ -35,7 +35,7 @@ let instructions3 = {
   stimulus: '<p style="font-size:26px;"> Human Detection Task </p>' +
     '<p style="font-size:22px;"> Your job will be to report if you see Person B within the moving dots part of the screen. </p>' +
     '<p style="font-size:22px;"> Please report as accurately as possible whether Person B is within the moving dots. </p>' +
-    '<p style="font-size:22px;"> Press "J" for saying "Yes, I saw a Person B". </p>' +
+    '<p style="font-size:22px;"> Press "J" for saying "Yes, I saw Person B". </p>' +
     '<p style="font-size:22px;"> Press "F" to say "No, I did not see Person B". </p>' +
     '<p style="font-size:24px;"> <i> Press the letter J to continue. </i> </p>',
   choices: [74],
@@ -74,7 +74,7 @@ let fixation = {
 // behaviour - detection
 let detection = {
   type: "html-keyboard-response",
-  stimulus: '<div style="font-size:24px; color:white;">Did you see a Person B within the moving dots?</div>' + 
+  stimulus: '<div style="font-size:24px; color:white;">Did you see Person B within the moving dots?</div>' + 
     '<p style="font-size:24px;"> <i> Press "F" for No or "J" for Yes. </i> </p>',
   data: jsPsych.timelineVariable("data"),
   choices: [70, 74],
@@ -184,8 +184,8 @@ let instructions5 = {
 let instructions6 = {
   type: "html-keyboard-response",
   stimulus: '<p style="font-size:22px;"> Are you ready? </p>' +
-    '<p style="font-size:22px;"> This second part consists in 48 test videos, and no feedback will be provided anymore. </p>' + 
-    '<p style="font-size:22px;"> Try to be as accurate as possible. If you are ready to start and coompleting the study and responding the questionnaires then: </p>' +
+    '<p style="font-size:22px;"> This second part consists of 48 test videos, and no feedback will be provided anymore. </p>' + 
+    '<p style="font-size:22px;"> Try to be as accurate as possible. If you are ready to start and completing the study and responding the questionnaires then: </p>' +
     '<p style="font-size:24px;"> <i> Press the spacebar to start. </i> </p>',
   choices: [32],
 };
