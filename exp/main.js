@@ -3,6 +3,7 @@ let timeline = [];
 timeline.push(instructions0);
 timeline.push(instructions1);
 timeline.push(instructions2);
+// timeline.push(procedureSignalExample); // adding a video as example before the practice...
 timeline.push(instructions3);
 timeline.push(instructions4);
 timeline.push(procedurePractice);

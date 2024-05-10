@@ -33,7 +33,7 @@ let instructions2 = {
 let instructions3 = {
   type: "html-keyboard-response",
   stimulus: '<p style="font-size:26px;"> Human Detection Task </p>' +
-    '<p style="font-size:22px;"> Your job will be to report if you see Person B within the moving dots part of the screen. </p>' +
+    '<p style="font-size:22px;"> Your job is to report whether you saw Person B within the moving dots part of the screen. </p>' +
     '<p style="font-size:22px;"> Please report as accurately as possible whether Person B is within the moving dots. </p>' +
     '<p style="font-size:22px;"> Press "J" for saying "Yes, I saw Person B". </p>' +
     '<p style="font-size:22px;"> Press "F" to say "No, I did not see Person B". </p>' +
@@ -47,7 +47,7 @@ let instructions4 = {
   stimulus: '<p style="font-size:26px;"> Human Detection Task </p>' +
     '<p style="font-size:22px;"> Before each video starts a "+" cross will signal where Person A will appear. </p>' +
     '<p style="font-size:22px;"> For the first half of the task, feedback will provided after your response ("J" or "F"). </p>' +
-    '<p style="font-size:22px;"> Remember press "J" if you see Person B (within the moving dots) or press "F" if you do not see it. </p>' +
+    '<p style="font-size:22px;"> Remember press "J" if you see Person B (within the moving dots) or press "F" if you do not see them. </p>' +
     '<p style="font-size:24px;"> <i> Press the spacebar to start the first half of the task. </i> </p>',
   choices: [32],
 };
