@@ -61,7 +61,7 @@
         </p>
       </div>
     </div>
-    <button style="float:center; margin:35px; vertical-align:middle" id="consentButton" class="loadMain" onclick="validateConsent()" type="button">
+    <button id="consentButton" class="loadMain" onclick="validateConsent()" type="button">
       <script>
         consent
       </script>
