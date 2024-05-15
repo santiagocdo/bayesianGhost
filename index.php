@@ -42,7 +42,8 @@ $filesArrayStimJSON = json_encode($filesArrayStim);
   <script type="text/javascript" src="jsPsych/plugins/jspsych-video-keyboard-response.js"></script>
   <link href="jsPsych/css/jspsych.css" rel="stylesheet" type="text/css">
   </link>
-  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="wrap/lib/style.css">
+  <link rel="stylesheet" type="text/css" href="css/custom.css">
 </head>
 
 <body id='unload' onbeforeunload="return areYouSure()">
@@ -71,6 +72,8 @@ $filesArrayStimJSON = json_encode($filesArrayStim);
 <footer>
   <script type="text/javascript" src="exp/fn.js"></script>
   <script type="text/javascript" src="exp/conf.js"></script>
+  <!-- wrap functions must be after conf.js which store global variable theme -->
+  <script type="text/javascript" src="wrap/lib/fn.js"></script> 
   <script type="text/javascript" src="exp/lang.js"></script>
   <script type="text/javascript" src="exp/var.js"></script>
   <script>

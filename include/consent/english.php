@@ -61,7 +61,7 @@
     </p>
   </div>
   </div>
-  <button style="float:center; margin:35px; vertical-align:middle" id="submitButton" class="loadMain" onclick="validateConsent()" type="button"><script>consent</script></button></div>
+  <button style="float:center; margin:35px; vertical-align:middle" id="consentButton" class="loadMain" onclick="validateConsent()" type="button"><script>consent</script></button></div>
   
 <div id="validation" style="display: none">
     <br>

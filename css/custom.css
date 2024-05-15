@@ -1,0 +1,18 @@
+ 
+#jspsych-video-keyboard-response-stimulus {
+    width: 85vw;  /* 60% of the viewport width */
+    height: auto;  /* Auto for maintaining aspect ratio */
+    max-width: 60%;  /* Maximum of 60% of the parent container */
+    max-height: 60%;  /* Maximum of 60% of the parent container */
+    object-fit: contain;  /* Prevents distortion of the video */
+  }
+  
+
+body {
+    background-color: black;
+    font-family: Helvetica, Arial, sans-serif;
+}
+  
+p {
+    color: white;
+}
