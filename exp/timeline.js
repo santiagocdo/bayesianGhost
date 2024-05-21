@@ -12,10 +12,10 @@ let instructions1 = {
   type: "html-keyboard-response",
   stimulus: '<p style="font-size:26px;"> Please ensure the following: </p>' +
     '<p style="font-size:22px;"> (1) You are in a room with no distractions (no people, music, phones, etc.), </p>' +
-    '<p style="font-size:22px;"> (2) For the next 30 minutes, you will be able to stay focused on the task and questionnaires, </p>' +
+    '<p style="font-size:22px;"> (2) For the next 30 minutes, you will be able to stay focused on the task and questionnaires. </p>' +
     '<p style="font-size:22px;"> As the study progresses, you may find that you start to feel tired. Please do your best to stay focused throughout, since our research depends on it! </p>' +
     '<p style="font-size:24px;"> <i> Press the spacebar to continue. </i> </p>',
-  choices: [32],
+  choices: [32], 
 };
 
 // first description of the stimuli/videos
@@ -185,7 +185,7 @@ let instructions6 = {
   type: "html-keyboard-response",
   stimulus: '<p style="font-size:22px;"> Are you ready? </p>' +
     '<p style="font-size:22px;"> This second part consists of 48 test videos, and no feedback will be provided anymore. </p>' + 
-    '<p style="font-size:22px;"> Try to be as accurate as possible. If you are ready to start and completing the study and responding the questionnaires then: </p>' +
+    '<p style="font-size:22px;"> Try to be as accurate as possible. If you are ready to start the final part of the task and move on to the questionnaires, </p>' +
     '<p style="font-size:24px;"> <i> Press the spacebar to start. </i> </p>',
   choices: [32],
 };
