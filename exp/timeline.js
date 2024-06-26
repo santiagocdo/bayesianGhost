@@ -6,7 +6,6 @@ let instructions0 = {
     '<p style="font-size:22px;"> <i> Press the spacebar to continue. </i> </p>',
   choices: [32],
 };
-
 // please be in the task
 let instructions1 = {
   type: "html-keyboard-response",
@@ -15,28 +14,26 @@ let instructions1 = {
     '<p style="font-size:22px;"> (2) For the next 30 minutes, you will be able to stay focused on the task and questionnaires. </p>' +
     '<p style="font-size:22px;"> As the study progresses, you may find that you start to feel tired. Please do your best to stay focused throughout, since our research depends on it! </p>' +
     '<p style="font-size:24px;"> <i> Press the spacebar to continue. </i> </p>',
-  choices: [32], 
+  choices: [32],
 };
-
 // first description of the stimuli/videos
 let instructions2 = {
   type: "html-keyboard-response",
   stimulus: '<p style="font-size:26px;"> Human Detection Task </p>' +
     '<p style="font-size:22px;"> In this task, you will see a series of videos containing one person (A) or two people (A and B). </p>' +
-    '<p style="font-size:22px;"> In half of the videos both Person A and Person B will be displayed one on each side of the screen, but Person B will be masked with moving dots. </p>' +
-    '<p style="font-size:22px;"> For the other half of the videos there will be only Person A on one side, and on the other side there will be only moving dots. </p>' +
+    '<p style="font-size:22px;"> In half of the videos Person A will be displayed on one side of the screen and on the other side there will be only moving dots. </p>' +
+    '<p style="font-size:22px;"> For the second half of the videos, there will be two people, Person A on one side and Person B behind the moving dots. </p>' +
     '<p style="font-size:24px;"> <i> Press the spacebar to continue. </i> </p>',
   choices: [32],
 };
-
 // after seeing videos with one person
 let instructions3 = {
   type: "html-keyboard-response",
   stimulus: '<p style="font-size:26px;"> Human Detection Task </p>' +
-    '<p style="font-size:22px;"> Your job is to report whether you saw Person B within the moving dots part of the screen. </p>' +
-    '<p style="font-size:22px;"> Please report as accurately as possible whether Person B is within the moving dots. </p>' +
-    '<p style="font-size:22px;"> Press "J" for saying "Yes, I saw Person B". </p>' +
-    '<p style="font-size:22px;"> Press "F" to say "No, I did not see Person B". </p>' +
+    '<p style="font-size:22px;"> Your job is to report whether you saw Person B behind the moving dots . </p>' +
+    '<p style="font-size:22px;"> Please report as accurately as possible whether Person B is behind the moving dots. </p>' +
+    '<p style="font-size:22px;"> Press "J" to report: "Yes, I saw Person B". </p>' +
+    '<p style="font-size:22px;"> Press "F" to report: "No, I did not see Person B". </p>' +
     '<p style="font-size:24px;"> <i> Press the letter J to continue. </i> </p>',
   choices: [74],
 };
