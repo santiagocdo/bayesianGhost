@@ -27,7 +27,7 @@ Seeing a Bayesian ghost: Sensorimotor activation leads to an illusory social per
         cd C://xampp//htdocs
 
 7. Clone into htdocs:
-        git clone https://github.com/santiagocdo/bayesianGhost.git
+        git clone git@github.com:belieflab/bayesianGhost.git --recurse-submodules
 
 #### Modifty permissions:
 8. Copy this text into your terminal from the htdocs folder (the folder you are already in).
